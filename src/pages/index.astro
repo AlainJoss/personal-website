@@ -1,0 +1,74 @@
+---
+import { projects, forecasting } from '../data/projects';
+import '../styles/global.css';
+const entries = forecasting ? [...projects, forecasting] : projects;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Alain Joss — selected projects, research, and tools across disciplines." />
+    <meta name="theme-color" content="#f7f4ec" />
+    <title>Alain Joss — Projects</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body>
+    <a class="skip-link" href="#projects">Skip to projects</a>
+    <div class="shell">
+      <header class="masthead">
+        <span class="wordmark">alain joss</span>
+        <nav aria-label="Main navigation"><a href="#projects">projects</a><span aria-hidden="true">/</span><a href="#about">about</a></nav>
+      </header>
+      <main>
+        <section class="intro" aria-labelledby="heading">
+          <h1 id="heading">selected projects<span class="cursor" aria-hidden="true">_</span></h1>
+          <p class="intro-copy">Things I’ve built or contributed to.</p>
+        </section>
+        <section id="projects" aria-labelledby="projects-heading">
+          <div class="section-label">
+            <h2 id="projects-heading">Project index</h2>
+            <span>01 — 03</span>
+          </div>
+          <div class="project-grid">
+            {entries.map((project, i) => (
+              <a class="project-card" href={project.href}>
+                <div class="card-top"><span>/{String(i + 1).padStart(2, '0')}</span></div>
+                <h3>{project.title}</h3>
+                <p class="project-summary">{project.description}</p>
+                <p class="project-detail">{project.detail}</p>
+                <ul class="tags" aria-label="Topics">{project.tags.map(tag => <li>{tag}</li>)}</ul>
+                <div class="card-link">{project.linkLabel}<span aria-hidden="true">↗</span></div>
+              </a>
+            ))}
+            {!forecasting && <div class="project-card empty-card" aria-label="Empty slot for a future forecasting project"><span aria-hidden="true">/03</span></div>}
+          </div>
+        </section>
+        <section id="about" class="about" aria-labelledby="about-heading">
+          <div class="section-label"><h2 id="about-heading">About me</h2></div>
+          <div class="about-grid">
+            <div class="about-copy">
+              <p>I’m Alain Joss, a data scientist based in Zürich and an engineer at heart. I like understanding how things work, then building something useful with that understanding.</p>
+              <p>My work spans scientific data pipelines, simulations, machine learning, and interactive analysis. I enjoy moving between disciplines and turning unfamiliar problems into working systems.</p>
+              <div class="contact-links"><a href="https://github.com/alainjoss">GitHub ↗</a><a href="https://linkedin.com/in/alainjoss">LinkedIn ↗</a><a href="mailto:alain.joss.1998@gmail.com">Email ↗</a></div>
+            </div>
+            <div class="cv">
+              <h3>Education</h3>
+              <dl>
+                <div><dt>MSc · Data Science</dt><dd>University of Zürich <span>2023–2026</span></dd></div>
+                <div><dt>BSc · Business Administration</dt><dd>Minor in Computer Science<br />University of Bern <span>2019–2023</span></dd></div>
+              </dl>
+              <h3>Selected experience</h3>
+              <dl>
+                <div><dt>Research Assistant · SLF</dt><dd>Large-scale micro-CT data pipelines <span>2025–2026</span></dd></div>
+                <div><dt>Teaching Assistant · ETH Zurich</dt><dd>Data Science for Environmental Systems <span>2023–2025</span></dd></div>
+                <div><dt>Research Assistant · WSL</dt><dd>Ecological networks & simulations <span>2023</span></dd></div>
+              </dl>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer><a href="#heading">Back to top ↑</a></footer>
+    </div>
+  </body>
+</html>
