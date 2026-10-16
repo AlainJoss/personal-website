@@ -8,18 +8,18 @@
 
 /* Compact desktop composition: keep the first project row above the fold. */
 @media(min-width:651px){
-  .shell{max-width:750px;padding:0 28px}
+  .shell{max-width:900px;padding:0 36px}
   .masthead{padding:17px 0}
   .wordmark{font-size:13px}
   nav{font-size:11px}
-  .intro{padding:28px 0 24px}
-  h1{font-size:28px;margin-bottom:11px}
+  .intro{padding:42px 0 34px}
+  h1{font-size:36px;margin-bottom:15px}
   .intro-copy{font-size:12px}
   .section-label{padding-bottom:9px;margin-bottom:14px;font-size:9px}
   .project-grid{gap:16px}
-  .project-card{padding:16px;min-height:270px}
+  .project-card{padding:22px;min-height:310px}
   .card-top{font-size:9px}
-  .project-card h3{font-size:15px;margin:16px 0 12px}
+  .project-card h3{font-size:19px;margin:16px 0 12px}
   .project-summary{font-size:10px;margin-bottom:12px}
   .project-detail{font-size:10px;line-height:1.75;margin-bottom:18px}
   .tags{font-size:9px;margin-bottom:15px;gap:6px 12px}
@@ -29,11 +29,11 @@
 }
 
 /* Readable supporting text without adding unnecessary section chrome. */
-.project-summary,.project-detail{font-size:12px;line-height:1.7}
+.project-summary,.project-detail{font-size:13px;line-height:1.7}
 .tags{font-size:10px}
 .card-link{font-size:11px}
 .card-top{font-size:10px}
-.about-copy{font-size:12px}
+.about-copy{font-size:14px}
 .cv{font-size:12px}
 .cv dd{font-size:11px}
 .cv dd span{font-size:10px}
@@ -48,13 +48,12 @@
 .masthead{padding:14px 0}
 nav{gap:24px}
 
-/* Apply the requested scale at every viewport width, including narrow preview panes. */
-.shell{zoom:0.81}
+
 
 /* Professional context beneath the About text. */
 .about-grid{display:block}
 .about-copy{max-width:620px}
-.background-summary{margin:32px 0 0;font-size:12px;line-height:1.85}
+.background-summary{margin:32px 0 0;font-size:13px;line-height:1.85}
 .background-summary>div{display:grid;grid-template-columns:100px minmax(0,1fr);gap:20px;margin-bottom:18px}
 .background-summary dt{color:var(--muted);font-size:10px}
 .background-summary dd{margin:0}
