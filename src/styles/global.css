@@ -1,4 +1,4 @@
-:root{color-scheme:light;--paper:#f7f4ec;--ink:#292720;--muted:#746f64;--line:#d7d2c6;font-family:'SFMono-Regular',Consolas,'Liberation Mono',monospace;color:var(--ink);background:var(--paper);font-synthesis:none}
+:root{color-scheme:light;--paper:#f7f4ec;--ink:#292720;--muted:#625d53;--line:#d7d2c6;font-family:'SFMono-Regular',Consolas,'Liberation Mono',monospace;color:var(--ink);background:var(--paper);font-synthesis:none}
 *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:30px}body{margin:0;font-size:13px;line-height:1.7}a{color:inherit;text-underline-offset:4px}::selection{background:var(--ink);color:var(--paper)}.shell{max-width:936px;margin:auto;padding:0 40px}.masthead{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:25px 0;border-bottom:1px solid var(--ink)}.wordmark{text-decoration:none;font-size:13px;font-weight:700}nav{display:flex;gap:14px;font-size:11px;color:var(--muted)}nav a{text-decoration:none}nav a:hover{text-decoration:underline}.intro{padding:74px 0 58px}.eyebrow{text-transform:uppercase;letter-spacing:.12em;font-size:10px;color:var(--muted);margin:0 0 21px}h1{font-size:clamp(28px,4.5vw,40px);line-height:1.2;font-weight:500;letter-spacing:-.065em;margin:0 0 25px}.cursor{color:#968363}.intro-copy{font-size:12px;line-height:1.9;margin:0;color:var(--muted)}.section-label{display:flex;align-items:center;justify-content:space-between;padding:0 0 13px;border-bottom:1px solid var(--ink);margin-bottom:21px;font-size:10px;text-transform:uppercase;letter-spacing:.1em}.section-label h2{font:inherit;margin:0}.section-label>span{color:var(--muted)}.project-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.project-card{padding:22px;min-height:330px;border:1px solid var(--line);text-decoration:none;display:flex;flex-direction:column;transition:background-color .15s,color .15s,border-color .15s}.card-top{display:flex;gap:12px;align-items:center;font-size:10px;color:var(--muted)}.project-card h3{font-size:18px;line-height:1.35;font-weight:500;letter-spacing:-.045em;margin:24px 0 16px}.project-summary{font-size:11px;margin:0 0 16px;line-height:1.8}.project-detail{font-size:10px;color:var(--muted);margin:0 0 25px;line-height:1.9}.tags{list-style:none;display:flex;gap:7px 16px;flex-wrap:wrap;margin:auto 0 23px;padding:0;font-size:9px;color:var(--muted)}.tags li::before{content:'#';opacity:.65}.card-link{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding-top:13px;font-size:10px}a.project-card:hover,a.project-card:focus-visible{background:var(--ink);color:var(--paper);border-color:var(--ink)}a.project-card:hover :is(.card-top,.project-detail,.tags),a.project-card:focus-visible :is(.card-top,.project-detail,.tags){color:#ccc6b9}a.project-card:hover .card-link,a.project-card:focus-visible .card-link{border-color:#5a564c}.empty-card{min-height:175px;border-style:dashed;color:#a29a8a;font-size:10px}footer{margin-top:52px;padding:22px 0 30px;border-top:1px solid var(--line);display:flex;justify-content:flex-end;font-size:10px;color:var(--muted)}footer a{text-decoration:none}footer a:hover{text-decoration:underline}:focus-visible{outline:2px solid var(--ink);outline-offset:5px}.skip-link{position:absolute;top:8px;left:8px;transform:translateY(-200%);background:var(--ink);color:var(--paper);padding:8px 14px;z-index:1}.skip-link:focus{transform:translateY(0)}
 @media(max-width:650px){.shell{padding:0 22px}.masthead{padding:22px 0}nav{gap:10px}.intro{padding:52px 0 42px}.project-grid{grid-template-columns:1fr}.project-card{min-height:320px;padding:20px}.empty-card{min-height:170px}h1{letter-spacing:-.055em}.intro-copy{font-size:12px}.desktop-break{display:none}footer{margin-top:45px}}
 @media(max-width:370px){.wordmark{font-size:13px}.card-top{gap:8px}.shell{padding:0 17px}}
@@ -27,3 +27,23 @@
   .empty-card{min-height:135px}
   .about{margin-top:45px}
 }
+
+/* Readable supporting text without adding unnecessary section chrome. */
+.project-summary,.project-detail{font-size:12px;line-height:1.7}
+.tags{font-size:10px}
+.card-link{font-size:11px}
+.card-top{font-size:10px}
+.about-copy{font-size:12px}
+.cv{font-size:12px}
+.cv dd{font-size:11px}
+.cv dd span{font-size:10px}
+@media(min-width:651px){
+  .project-card{min-height:300px}
+  .project-detail{margin-bottom:16px}
+  .project-card h3{margin-top:14px}
+  .about{margin-top:48px}
+}
+
+/* Compact header with clear separation between navigation links. */
+.masthead{padding:14px 0}
+nav{gap:24px}

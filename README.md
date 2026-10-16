@@ -21,6 +21,6 @@ Set your desired Worker name in `wrangler.jsonc` before deployment. For Cloudfla
 
 ## Content
 
-Edit `src/data/projects.ts` to update card content and external links. The forecasting slot is intentionally empty and non-interactive. Replace `forecasting: Project | null = null` with a project object to populate it.
+Edit `src/data/projects.ts` to update card content and external links. The forecasting project is hidden until it has content. Replace `forecasting: Project | null = null` with a project object to populate it.
 
 Edit the color variables and layout in `src/styles/global.css`.

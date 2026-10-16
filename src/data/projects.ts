@@ -19,7 +19,7 @@ export const projects: Project[] = [
   {
     title: 'Guided weather generation',
     description: 'Guiding weather models toward extreme scenarios.',
-    detail: 'Guidance methods for flow-matching-based generative weather models. Developed and evaluated for the master’s thesis “Guided Flow Matching for Extreme Weather Scenarios”.',
+    detail: 'Guidance methods for flow-matching-based generative weather models. Developed and evaluated for my master’s thesis “Guided Flow Matching for Extreme Weather Scenarios”.',
     tags: ['flow matching', 'machine learning'],
     href: 'https://github.com/AlainJoss/guiding-generative-probabilistic-weather-models',
     linkLabel: 'Explore the research',
