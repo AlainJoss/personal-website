@@ -22,14 +22,13 @@ const entries = forecasting ? [...projects, forecasting] : projects;
       </header>
       <main>
         <section class="intro" aria-labelledby="heading">
-          <h1 id="heading">selected projects<span class="cursor" aria-hidden="true">_</span></h1>
+          <h1 id="heading">projects<span class="cursor" aria-hidden="true">_</span></h1>
           <p class="intro-copy">A few things I’ve built or contributed to.</p>
         </section>
         <section id="projects" aria-label="Projects">
           <div class="project-grid">
-            {entries.map((project, i) => (
+            {entries.map((project) => (
               <a class="project-card" href={project.href}>
-                <div class="card-top"><span>/{String(i + 1).padStart(2, '0')}</span></div>
                 <h3>{project.title}</h3>
                 <p class="project-summary">{project.description}</p>
                 <p class="project-detail">{project.detail}</p>
@@ -41,7 +40,7 @@ const entries = forecasting ? [...projects, forecasting] : projects;
         </section>
 
       </main>
-      <footer><a href="/about">about me →</a></footer>
+      <footer><a href="/about">about →</a></footer>
     </div>
   </body>
 </html>
