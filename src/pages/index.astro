@@ -29,7 +29,7 @@ const entries = forecasting ? [...projects, forecasting] : projects;
           <div class="project-grid">
             {entries.map((project) => (
               <a class="project-card" href={project.href}>
-                <h3>{project.title}</h3>
+                <h2>{project.title}</h2>
                 <p class="project-summary">{project.description}</p>
                 <p class="project-detail">{project.detail}</p>
                 <ul class="tags" aria-label="Topics">{project.tags.map(tag => <li>{tag}</li>)}</ul>
