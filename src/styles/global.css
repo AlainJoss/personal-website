@@ -13,13 +13,13 @@
   .wordmark{font-size:13px}
   nav{font-size:11px}
   .intro{padding:42px 0 34px}
-  h1{font-size:40px;margin-bottom:15px}
+  h1{font-size:42px;margin-bottom:15px}
   .intro-copy{font-size:12px}
   .section-label{padding-bottom:9px;margin-bottom:14px;font-size:9px}
   .project-grid{gap:16px}
   .project-card{padding:22px;min-height:310px}
   .card-top{font-size:9px}
-  .project-card h3{font-size:19px;margin:0 0 12px}
+  .project-card h3{font-size:20px;margin:0 0 12px}
   .project-summary{font-size:10px;margin-bottom:12px}
   .project-detail{font-size:10px;line-height:1.75;margin-bottom:18px}
   .tags{font-size:9px;margin-bottom:15px;gap:6px 12px}
@@ -29,11 +29,11 @@
 }
 
 /* Readable supporting text without adding unnecessary section chrome. */
-.project-summary,.project-detail{font-size:15px;line-height:1.7}
+.project-summary,.project-detail{font-size:16px;line-height:1.7}
 .tags{font-size:10px}
 .card-link{font-size:11px}
 .card-top{font-size:10px}
-.about-copy{font-size:16px}
+.about-copy{font-size:17px}
 .cv{font-size:12px}
 .cv dd{font-size:11px}
 .cv dd span{font-size:10px}
@@ -53,7 +53,7 @@ nav{gap:24px}
 /* Professional context beneath the About text. */
 .about-grid{display:block}
 .about-copy{max-width:620px}
-.background-summary{margin:32px 0 0;font-size:15px;line-height:1.85}
+.background-summary{margin:32px 0 0;font-size:16px;line-height:1.85}
 .background-summary>div{display:grid;grid-template-columns:100px minmax(0,1fr);gap:20px;margin-bottom:18px}
 .background-summary dt{color:var(--muted);font-size:10px}
 .background-summary dd{margin:0}
@@ -72,3 +72,10 @@ nav a[aria-current="page"]{color:var(--ink);text-decoration:underline}
 /* Slightly larger header text. */
 .wordmark{font-size:17px}
 nav{font-size:13px}
+
+/* Uniform 15% increase in the overall site scale. */
+.shell{zoom:1.15}
+
+/* Balance the navigation gap with the space above the project cards. */
+footer{margin-top:34px;padding-top:0}
+@media(max-width:650px){footer{margin-top:42px}}
