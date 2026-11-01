@@ -1,14 +1,15 @@
 :root {
   color-scheme: light;
-  --paper: #f8f4eb;
+  --paper: #f1e8d4;
   --ink: #292720;
   --muted: #625d53;
   --line: #d7d2c6;
-  --text: 1.15rem;
+  --text: 1.11rem;
   --small: .8rem;
   --title: 1.4375rem;
   --space-section: 2.5rem;
-  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
+  font-family: monospace;
+  font-size: 16px;
   color: var(--ink);
   background: var(--paper);
   font-synthesis: none;
@@ -103,10 +104,13 @@ a.project-card:is(:hover, :focus-visible) .card-link { border-color: #5a564c; }
 .contact-links { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.5rem; font-size: var(--small); }
 .contact-links a:first-child { margin-left: -4px; }
 .background-summary { margin: 2rem 0 0; font-size: var(--text); line-height: 1.75; }
-.background-summary > div { display: grid; grid-template-columns: 115px minmax(0, 1fr); gap: 1.5rem; margin-bottom: 1.5rem; }
+.background-summary > div { display: grid; grid-template-columns: 1fr; gap: .375rem; margin-bottom: 1.5rem; }
 .background-summary dt { font-size: var(--small); color: var(--muted); }
 .background-summary dd { margin: 0; }
-.education-entry + .education-entry { margin-top: 1rem; }
+.background-list { margin: 0; padding-left: 1.2em; list-style-type: disc; }
+.background-entry { padding-left: .25em; }
+.background-entry::marker { color: var(--muted); font-size: .7em; }
+.background-entry + .background-entry { margin-top: .5rem; }
 .institution { display: block; color: var(--muted); }
 
 footer { display: flex; justify-content: flex-end; margin-top: var(--space-section); padding-bottom: 2rem; font-size: var(--small); color: var(--muted); }
@@ -115,7 +119,7 @@ footer a { text-decoration: none; }
 .skip-link:focus { transform: translateY(0); }
 
 @media (max-width: 700px) {
-  :root { --text: 1rem; --small: .75rem; --title: 1.25rem; --space-section: 2rem; }
+  :root { --text: .97rem; --small: .75rem; --title: 1.25rem; --space-section: 2rem; }
   .shell { padding: 0 22px; }
   .masthead { gap: .75rem; }
   nav { gap: .75rem; }
@@ -124,7 +128,7 @@ footer a { text-decoration: none; }
   .project-grid { grid-template-columns: 1fr; }
   .project-card { padding: 20px 20px 0; }
   .card-link { min-height: 48px; }
-  .about-copy { font-size: 1rem; }
+  .about-copy { font-size: var(--text); }
   .background-summary > div { grid-template-columns: 1fr; gap: .375rem; }
 }
 @media (max-width: 360px) {
