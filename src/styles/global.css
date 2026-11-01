@@ -45,7 +45,7 @@ nav a[aria-current='page'] { color: var(--ink); text-decoration: underline; }
 
 .intro { padding: 3rem 0 var(--space-section); }
 h1 {
-  margin: 0 0 1rem;
+  margin: 0 0 1.75rem;
   font-size: 3rem;
   font-weight: 500;
   line-height: 1.2;
@@ -97,15 +97,15 @@ a.project-card:hover, a.project-card:focus-visible { background: var(--ink); col
 a.project-card:is(:hover, :focus-visible) :is(.project-detail, .tags) { color: #ccc6b9; }
 a.project-card:is(:hover, :focus-visible) .card-link { border-color: #5a564c; }
 
-.about-page { padding-top: 3rem; }
+.about-page { padding-top: 3rem; padding-bottom: 4rem; }
 .about-page h1 { margin-bottom: 1.75rem; }
-.about-copy { max-width: 45rem; font-size: 1.225rem; line-height: 1.7; }
+.about-copy { max-width: 45rem; font-size: var(--text); line-height: 1.9; }
 .about-copy p { margin: 0 0 1.5rem; }
 .contact-links { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.5rem; font-size: var(--small); }
 .contact-links a:first-child { margin-left: -4px; }
-.background-summary { margin: 2rem 0 0; font-size: var(--text); line-height: 1.75; }
-.background-summary > div { display: grid; grid-template-columns: 1fr; gap: .375rem; margin-bottom: 1.5rem; }
-.background-summary dt { font-size: var(--small); color: var(--muted); }
+.background-summary { display: grid; gap: 1.15rem; margin: 2rem 0 0; font-size: var(--text); line-height: 1.75; }
+.background-summary > div { display: grid; grid-template-columns: 1fr; gap: .375rem; }
+.background-summary dt { font-size: var(--title); font-weight: 500; line-height: 1.35; letter-spacing: -.045em; color: var(--ink); }
 .background-summary dd { margin: 0; }
 .background-list { margin: 0; padding-left: 1.2em; list-style-type: disc; }
 .background-entry { padding-left: .25em; }
@@ -129,7 +129,6 @@ footer a { text-decoration: none; }
   .project-card { padding: 20px 20px 0; }
   .card-link { min-height: 48px; }
   .about-copy { font-size: var(--text); }
-  .background-summary > div { grid-template-columns: 1fr; gap: .375rem; }
 }
 @media (max-width: 360px) {
   .shell { padding: 0 18px; }
