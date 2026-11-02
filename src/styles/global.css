@@ -4,6 +4,7 @@
   --ink: #292720;
   --muted: #625d53;
   --line: #d7d2c6;
+  --card-border: #968363;
   --text: 1.11rem;
   --small: .8rem;
   --title: 1.4375rem;
@@ -52,7 +53,7 @@ h1 {
   letter-spacing: -.065em;
 }
 .cursor { color: #968363; }
-.intro-copy { margin: 0; font-size: var(--text); line-height: 1.9; color: var(--muted); }
+.intro-copy { margin: 0; font-size: var(--text); line-height: 1.9; color: var(--ink); }
 .eyebrow { font-size: var(--small); color: var(--muted); text-transform: uppercase; letter-spacing: .1em; }
 
 .project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.15rem; }
@@ -60,7 +61,7 @@ h1 {
   display: flex;
   flex-direction: column;
   padding: 25px 25px 0;
-  border: 1px solid var(--line);
+  border: 1px solid var(--card-border);
   text-decoration: none;
   transition: background-color .15s, color .15s, border-color .15s;
 }
@@ -90,12 +91,12 @@ h1 {
   justify-content: space-between;
   align-items: center;
   min-height: 55px;
-  border-top: 1px solid var(--line);
+  border-top: 1px solid var(--card-border);
   font-size: var(--small);
 }
-a.project-card:hover, a.project-card:focus-visible { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+a.project-card:hover, a.project-card:focus-visible { background: var(--ink); color: var(--paper); border-color: var(--card-border); }
 a.project-card:is(:hover, :focus-visible) :is(.project-detail, .tags) { color: #ccc6b9; }
-a.project-card:is(:hover, :focus-visible) .card-link { border-color: #5a564c; }
+a.project-card:is(:hover, :focus-visible) .card-link { border-color: var(--card-border); }
 
 .about-page { padding-top: 3rem; padding-bottom: 4rem; }
 .about-page h1 { margin-bottom: 1.75rem; }

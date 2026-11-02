@@ -10,11 +10,11 @@ export type Project = {
 export const projects: Project[] = [
   {
     title: 'Guided weather generation',
-    description: 'Guiding weather models toward extreme scenarios.',
-    detail: 'Guidance methods for flow-matching-based generative weather models. Developed and evaluated for my master’s thesis “Guided Flow Matching for Extreme Weather Scenarios”.',
+    description: 'How to guide generative weather models towards prescribed weather scenarios?',
+    detail: 'A method for designing extreme weather scenarios and guiding models with minimal computational overhead, alongside an analysis of optimal generation settings.',
     tags: ['flow matching', 'machine learning'],
     href: 'https://github.com/AlainJoss/guiding-generative-probabilistic-weather-models',
-    linkLabel: 'Explore the research',
+    linkLabel: 'Explore my master’s thesis',
   },
   {
     title: 'Food web resilience',
