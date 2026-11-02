@@ -65,7 +65,7 @@ h1 {
   text-decoration: none;
   transition: background-color .15s, color .15s, border-color .15s;
 }
-.project-card h2 {
+.project-card h3 {
   margin: 0 0 .875rem;
   font-size: var(--title);
   line-height: 1.35;
@@ -140,3 +140,6 @@ footer a { text-decoration: none; }
   html { scroll-behavior: auto; }
   .project-card { transition: none; }
 }
+
+.project-section + .project-section { margin-top: 2.5rem; }
+.project-section-title { margin: 0 0 1rem; font-size: var(--title); font-weight: 500; line-height: 1.35; letter-spacing: -.045em; }

@@ -2,6 +2,7 @@
 import { projects, forecasting } from '../data/projects';
 import '../styles/global.css';
 const entries = forecasting ? [...projects, forecasting] : projects;
+const sections = ['research', 'products'] as const;
 ---
 <!doctype html>
 <html lang="en">
@@ -23,20 +24,28 @@ const entries = forecasting ? [...projects, forecasting] : projects;
       <main>
         <section class="intro" aria-labelledby="heading">
           <h1 id="heading">projects<span class="cursor" aria-hidden="true">_</span></h1>
-          <p class="intro-copy">A few things I’ve built or contributed&nbsp;to.</p>
+          <p class="intro-copy">Selected projects I’ve built or contributed&nbsp;to.</p>
         </section>
         <section id="projects" aria-label="Projects">
+          {sections.map(section => (
+          <section class="project-section" aria-labelledby={`${section}-heading`}>
+            <h2 class="project-section-title" id={`${section}-heading`}>{section}/</h2>
           <div class="project-grid">
-            {entries.map((project) => (
-              <a class="project-card" href={project.href}>
-                <h2>{project.title}</h2>
+            {entries.filter(project => project.section === section).map((project) => {
+              const Card = project.href ? 'a' : 'article';
+              return (
+              <Card class="project-card" href={project.href}>
+                <h3>{project.title}</h3>
                 <p class="project-summary">{project.description}</p>
-                <p class="project-detail">{project.detail}</p>
+                {project.detail && <p class="project-detail">{project.detail}</p>}
                 <ul class="tags" aria-label="Topics">{project.tags.map(tag => <li>{tag}</li>)}</ul>
-                <div class="card-link">{project.linkLabel}<span aria-hidden="true">↗</span></div>
-              </a>
-            ))}
+                <div class="card-link">{project.linkLabel}{project.href && <span aria-hidden="true">↗</span>}</div>
+              </Card>
+              );
+            })}
           </div>
+          </section>
+          ))}
         </section>
 
       </main>
