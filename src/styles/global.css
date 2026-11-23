@@ -57,7 +57,7 @@ nav a, .contact-links a, footer a {
 }
 nav a { justify-content: center; padding: 7px 10px; border-radius: 999px; text-decoration: none; }
 nav a:hover { color: var(--ink); }
-nav a[aria-current] { background: var(--ink); color: var(--paper); text-decoration: none; box-shadow: 2px 2px 0 var(--accent); }
+nav a[aria-current] { color: var(--ink); text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 2px; text-underline-offset: 7px; }
 footer a:hover { text-decoration: underline; }
 
 .intro { padding: 3.5rem 0 var(--space-section); }
