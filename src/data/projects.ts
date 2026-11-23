@@ -12,8 +12,8 @@ export const projects: Project[] = [
   {
     section: 'research',
     title: 'Guided weather generation',
-    description: 'How to guide generative weather models towards prescribed weather scenarios?',
-    detail: 'A method for designing extreme weather scenarios and guiding models with minimal computational overhead, alongside an analysis of optimal generation settings.',
+    description: 'Guiding generative weather models towards prescribed scenarios.',
+    detail: 'Developed methods for specifying extreme weather scenarios and guiding model generation with low computational overhead. Evaluated generation settings in my master’s thesis.',
     tags: ['flow matching', 'machine learning'],
     href: 'https://github.com/AlainJoss/guiding-generative-probabilistic-weather-models',
     linkLabel: 'Explore my master’s thesis',
@@ -21,8 +21,8 @@ export const projects: Project[] = [
   {
     section: 'research',
     title: 'Food web resilience',
-    description: 'How does species loss ripple through an ecosystem?',
-    detail: 'A node-removal algorithm and simulations exploring how species and habitat loss disrupt regional food webs.',
+    description: 'Understanding how species loss disrupts ecological networks.',
+    detail: 'Developed a node-removal algorithm and simulations to assess food-web robustness under species and habitat loss. Contributed to research published in Communications Biology.',
     tags: ['graph algorithms', 'simulation'],
     href: 'https://www.nature.com/articles/s42003-025-08396-y',
     linkLabel: 'Read the paper',

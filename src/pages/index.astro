@@ -9,27 +9,36 @@ const sections = ['research', 'products'] as const;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Alain Joss — selected projects, research, and tools across disciplines." />
-    <meta name="theme-color" content="#eadbbc" />
-    <title>Alain Joss — Projects</title>
+    <meta name="description" content="Freelance data science and ML engineering in Zürich. Data pipelines, machine learning systems, and interactive tools for research teams and businesses." />
+    <meta name="theme-color" content="#f2efe7" />
+    <title>Alain Joss — Data science &amp; ML engineering</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>
   <body>
-    <a class="skip-link" href="#projects">Skip to projects</a>
+    <a class="skip-link" href="#featured">Skip to content</a>
     <div class="shell">
+      <div class="header-backdrop">
       <header class="masthead">
         <span class="wordmark">alain joss</span>
-        <nav aria-label="Main navigation"><a href="/" aria-current="page">projects</a><a href="/about">about</a></nav>
+        <nav aria-label="Main navigation"><a href="#featured" aria-current="location">Featured</a><a href="#projects">Projects</a><a href="#approach">Approach</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
       </header>
+      </div>
       <main>
-        <section class="intro" aria-labelledby="heading">
-          <h1 id="heading">projects<span class="cursor" aria-hidden="true">_</span></h1>
-          <p class="intro-copy">Selected projects I’ve built or contributed&nbsp;to.</p>
+        <section id="featured" class="intro featured" aria-labelledby="heading">
+          <h1 id="heading"><span>Make sense of data.</span><span>Build reproducible pipelines.</span><span>Explore results interactively.</span></h1>
+          <div class="featured-intro">
+            <p>Hi, I’m Alain!<br />A data scientist based in Zürich.</p>
+            <p>I build reproducible pipelines and interactive tools that turn complex data into something people can explore and understand. My background is in machine learning, with experience across medical research, weather modeling, ecology, and snow science. I’m now developing tools to automate recurring tasks behind data-driven applications.</p>
+            <p>I work across the full data science stack, from connecting data sources and exploring datasets to designing experiments, building models, and creating interfaces for the results.</p>
+          </div>
+          <a class="contact-cta" href="#contact">Discuss a project ↗</a>
         </section>
-        <section id="projects" aria-label="Projects">
+        <section id="projects" class="page-section" aria-labelledby="projects-heading">
+          <h2 class="section-heading" id="projects-heading">Projects</h2>
+          <p class="section-intro">Selected research and tools I’ve built or contributed to.</p>
           {sections.map(section => (
           <section class="project-section" aria-labelledby={`${section}-heading`}>
-            <h2 class="project-section-title" id={`${section}-heading`}>{section}/</h2>
+            <h2 class="project-section-title" id={`${section}-heading`}>{section === 'research' ? 'Selected research' : 'Products in progress'}</h2>
           <div class="project-grid">
             {entries.filter(project => project.section === section).map((project) => {
               const Card = project.href ? 'a' : 'article';
@@ -48,7 +57,50 @@ const sections = ['research', 'products'] as const;
           ))}
         </section>
 
+        <section id="approach" class="page-section" aria-labelledby="approach-heading">
+          <h2 class="section-heading" id="approach-heading">Approach</h2>
+          <p class="section-intro">An engineer at heart, curious across disciplines.</p>
+          <div class="approach-grid">
+            <div><h3>Understand the problem</h3><p>I start with the question, the data, and the people using the results. The aim is a useful solution with assumptions that are clear.</p></div>
+            <div><h3>Build across the stack</h3><p>I connect data processing, modeling, and interactive analysis, turning experiments into reusable tools and reproducible workflows.</p></div>
+            <div><h3>Keep understanding intact</h3><p>I use automation to reduce repetitive work while keeping methods and results inspectable. Better tools should support better mental models.</p></div>
+          </div>
+        </section>
+        <section id="about" class="page-section" aria-labelledby="about-heading">
+          <h2 class="section-heading" id="about-heading">About</h2>
+          <div class="about-copy">
+            <p>I’m Alain Joss, a freelance data scientist and ML engineer based in Zürich. I’m deeply curious about systems, enjoy moving between disciplines, and particularly like building things.</p>
+            <p>I hold a master’s degree in Data Science from the University of Zürich and a bachelor’s degree in Business Administration with a minor in Computer Science from the University of Bern.</p>
+            <p>My experience includes research at SLF and WSL, from large-scale scientific data pipelines to ecological network simulations, and teaching Data Science for Environmental Systems at ETH Zurich.</p>
+            <p>I’m interested in tools that automate repetitive work while preserving understanding and helping people develop new mental models.</p>
+          </div>
+        </section>
+        <section id="contact" class="page-section contact-section" aria-labelledby="contact-heading">
+          <h2 class="section-heading" id="contact-heading">Let’s build something useful.</h2>
+          <p class="section-intro">A data pipeline, an ML experiment, or a tool your team needs. Tell me what you’re working on.</p>
+          <a class="contact-cta" href="mailto:alain.joss.1998@gmail.com">Discuss a project ↗</a>
+          <div class="contact-links"><a href="https://github.com/alainjoss">GitHub ↗</a><a href="https://linkedin.com/in/alainjoss">LinkedIn ↗</a><a href="mailto:alain.joss.1998@gmail.com">Email ↗</a></div>
+        </section>
       </main>
     </div>
+    <script>
+      const links = [...document.querySelectorAll<HTMLAnchorElement>('.masthead nav a')];
+      const sections = links.map(link => document.querySelector<HTMLElement>(link.hash)).filter((section): section is HTMLElement => section !== null);
+      let queued = false;
+      function updateNavigation() {
+        const atBottom = window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 4;
+        const active = atBottom ? sections.at(-1) : [...sections].reverse().find(section => section.getBoundingClientRect().top <= 180) ?? sections[0];
+        links.forEach(link => {
+          if (link.hash === `#${active?.id}`) link.setAttribute('aria-current', 'location');
+          else link.removeAttribute('aria-current');
+        });
+        queued = false;
+      }
+      window.addEventListener('scroll', () => {
+        if (!queued) { queued = true; requestAnimationFrame(updateNavigation); }
+      }, { passive: true });
+      window.addEventListener('resize', updateNavigation);
+      updateNavigation();
+    </script>
   </body>
 </html>

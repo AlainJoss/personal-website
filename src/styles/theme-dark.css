@@ -1,0 +1,10 @@
+/* Optional inverted warm palette. Import after global.css to activate. */
+:root {
+  color-scheme: dark;
+  --paper: #292720;
+  --ink: #eadbbc;
+  --muted: #ccc6b9;
+  --hover-muted: #625d53;
+  --line: #5a564c;
+  --card-border: #968363;
+}

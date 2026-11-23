@@ -24,3 +24,14 @@ Set your desired Worker name in `wrangler.jsonc` before deployment. For Cloudfla
 Edit `src/data/projects.ts` to update card content and external links. The forecasting project is hidden until it has content. Replace `forecasting: Project | null = null` with a project object to populate it.
 
 Edit the color variables and layout in `src/styles/global.css`.
+
+## Saved dark palette
+
+The inverted warm palette is preserved in `src/styles/theme-dark.css`. To restore it, import it immediately after `global.css` in each page (including the 404 page):
+
+```astro
+import '../styles/global.css';
+import '../styles/theme-dark.css';
+```
+
+Also change the `theme-color` meta tags to `#292720`. Remove the optional import and restore `theme-color` to `#eadbbc` to return to the original light palette.
